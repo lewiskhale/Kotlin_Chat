@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "204677568251",
+    "firebase_url": "https://chatapp-ce0b6.firebaseio.com",
+    "project_id": "chatapp-ce0b6",
+    "storage_bucket": "chatapp-ce0b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204677568251:android:ef7e4f2238ab8cc8",
+        "android_client_info": {
+          "package_name": "com.madebyk.android.mdchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204677568251-vpismd9iet32nq68clun8alsn9tb45j0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1xBUixJbTNkgzDrXeQd345yQotgZEibk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204677568251-vpismd9iet32nq68clun8alsn9tb45j0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204677568251:android:b4b8048958d7ce26",
+        "android_client_info": {
+          "package_name": "com.madebyk.android.mdchatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204677568251-vpismd9iet32nq68clun8alsn9tb45j0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1xBUixJbTNkgzDrXeQd345yQotgZEibk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204677568251-vpismd9iet32nq68clun8alsn9tb45j0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

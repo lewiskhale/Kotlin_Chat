@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+         Customize your theme here.
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorPrimaryVariant">@color/color_primary_variant</item>
+        <item name="colorSecondary">@color/color_secondary</item>
+        <item name="colorSecondaryVariant">@color/color_secondary_variant</item>
+        <item name="android:colorBackground">@color/color_background</item>
+        <!--<item name="colorPrimary">@color/primaryColor</item>-->
+        <!--<item name="colorPrimaryVariant">@color/primaryLightColor</item>-->
+        <!--<item name="colorPrimaryDark">@color/primaryDarkColor</item>-->
+        <!--<item name="colorSecondary">@color/secondaryColor</item>-->
+        <!--<item name="colorSecondaryVariant">@color/secondaryLightColor</item>-->
+        <!--<item name="colorAccent">@color/secondaryDarkColor</item>-->
+    </style>
+
+</resources>

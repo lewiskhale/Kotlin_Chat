@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">SimpleChatApp</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="email_hint">Enter your email</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="username_hint">Enter your username</string>
+    <string name="signin_button">Log In</string>
+    <string name="signup_button">SignUp</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot your password? Click Here</string>
+    <string name="Login_failed_ep">Failed to Login. Incorrect password or email</string>
+    <string name="Login_successful_ep">Successfully logged in</string>
+    <string name="no_entered_email_password">Please enter an email and/or password</string>
+    <string name="failed_authentication">Authentication failed.</string>
+    <string name="registered_to_DB">User successfully registered and added to the DB!!!</string>
+    <string name="not_registered_to_DB">Failed to add user to DB!!!</string>
+    <string name="email_not_verified">Email not verified</string>
+    <string name="email_verified_sent">Verification email has been sent</string>
+    <string name="password_not_long_enough">Password should be at least 6 characters</string>
+    <string name="google_signin_failed">Your Google signin failed</string>
+
+
+    <string name="Chats">Chats</string>
+    <string name="Uploads">Uploads</string>
+    <string name="Profile">Profile</string>
+
+
+</resources>
