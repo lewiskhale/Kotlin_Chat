@@ -3,6 +3,7 @@ package com.madebyk.android.mdchatapp.UserLogin
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -49,14 +50,9 @@ class SignInFragment(context: Context, mAuth: FirebaseAuth, val mGoogleSignInCli
 
     override fun onStart() {
         super.onStart()
-        signin_google_button.setColorScheme(R.color.colorPrimary)
-        // Check for existing Google Sign In account, if the user is already signed in
-        // the GoogleSignInAccount will be non-null.
-        val account = GoogleSignIn.getLastSignedInAccount(mContext)
         buttonListener()
         isVerified(currentUser)
     }
-
 
     fun buttonListener(){
         signin_button.setOnClickListener {
@@ -64,7 +60,10 @@ class SignInFragment(context: Context, mAuth: FirebaseAuth, val mGoogleSignInCli
             val password = signin_password.getText().toString()
 
             if(!(email.isEmpty() || password.isEmpty())){
-                LogIn(email,password)
+                if(!isNetworkAvailable())
+                    Toast.makeText(mContext, "There is no internet connection",Toast.LENGTH_SHORT).show()
+                else
+                    LogIn(email,password)
             }
             else{
                 Toast.makeText(mContext, resources.getString(R.string.no_entered_email_password), Toast.LENGTH_SHORT).show()
@@ -74,10 +73,6 @@ class SignInFragment(context: Context, mAuth: FirebaseAuth, val mGoogleSignInCli
         signin_forgot_password.setOnClickListener {
             val intent = Intent(mContext, ResetPasswordActivity:: class.java)
             startActivity(intent)
-        }
-
-        signin_google_button.setOnClickListener {
-            //signIn()
         }
 
     }
@@ -115,6 +110,15 @@ class SignInFragment(context: Context, mAuth: FirebaseAuth, val mGoogleSignInCli
                 Toast.makeText(mContext, resources.getString(R.string.email_not_verified), Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    //Check network status
+    private fun isNetworkAvailable(): Boolean {
+        val connectivityManager = mContext.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val info = connectivityManager.activeNetworkInfo
+        if(info != null && info.isConnected)
+            return true
+        return false
     }
 
     //____________________Google Sign In________________________________

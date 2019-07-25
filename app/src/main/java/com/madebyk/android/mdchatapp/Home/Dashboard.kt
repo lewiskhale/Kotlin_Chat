@@ -1,24 +1,20 @@
 package com.madebyk.android.mdchatapp.Home
 
 import android.content.Intent
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import com.madebyk.android.mdchatapp.NewChat.NewChat
+import com.madebyk.android.mdchatapp.ChatActivities.NewChat
 import com.madebyk.android.mdchatapp.R
 import com.madebyk.android.mdchatapp.UserLogin.LogInActivity
 import com.madebyk.android.mdchatapp.Utils.DashboardPageAdapter
 import kotlinx.android.synthetic.main.activity_dashboard.*
-import java.util.*
 
 class Dashboard: AppCompatActivity(){
 

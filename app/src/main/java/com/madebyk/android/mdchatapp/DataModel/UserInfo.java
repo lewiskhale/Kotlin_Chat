@@ -1,8 +1,11 @@
 package com.madebyk.android.mdchatapp.DataModel;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.madebyk.android.mdchatapp.R;
 import org.jetbrains.annotations.NotNull;
 
-public class UserInfo {
+public class UserInfo implements Parcelable {
 
     private String username, avatar, location, age;
     private String email;
@@ -38,9 +41,31 @@ public class UserInfo {
         //avatar = To generic avatar
     }
 
+    protected UserInfo(Parcel in) {
+        username = in.readString();
+        avatar = in.readString();
+        location = in.readString();
+        age = in.readString();
+        email = in.readString();
+        id = in.readString();
+        dateCreated = in.readLong();
+    }
+
+    public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {
+        @Override
+        public UserInfo createFromParcel(Parcel in) {
+            return new UserInfo(in);
+        }
+
+        @Override
+        public UserInfo[] newArray(int size) {
+            return new UserInfo[size];
+        }
+    };
+
     private void populateToNull(){
         this.username = null;
-        this.avatar = null;
+        this.avatar = "drawable://" + R.drawable.avatar;
         this.location = null;
         this.age = null;
         this.id = null;
@@ -114,5 +139,21 @@ public class UserInfo {
                 ", id='" + id + '\'' +
                 ", dateCreated=" + dateCreated +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(username);
+        parcel.writeString(avatar);
+        parcel.writeString(location);
+        parcel.writeString(age);
+        parcel.writeString(email);
+        parcel.writeString(id);
+        parcel.writeLong(dateCreated);
     }
 }

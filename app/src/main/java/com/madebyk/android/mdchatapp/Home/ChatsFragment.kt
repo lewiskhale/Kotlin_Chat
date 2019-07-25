@@ -29,25 +29,8 @@ class ChatsFragment(context: Context) : Fragment() {
         super.onStart()
 
         val adapter = GroupAdapter<ViewHolder>()
-        fetchUsers()
 
         chats_recyclerview.adapter = adapter
     }
 
-    fun fetchUsers(){
-        val db = FirebaseFirestore.getInstance()
-        db.collection("users")
-            .get()
-    }
 }
-
-//class UserItem: Item<ViewHolder>(){
-//    override fun getLayout(): Int {
-//        return R.layout.chats_row
-//    }
-//
-//    override fun bind(viewHolder: ViewHolder, position: Int) {
-//
-//    }
-//
-//}
