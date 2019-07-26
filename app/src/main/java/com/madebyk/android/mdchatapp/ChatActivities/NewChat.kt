@@ -11,9 +11,13 @@ import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.activity_new_chat.*
 import android.content.Intent
 import android.os.Build
+import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityOptionsCompat
 import androidx.core.util.Pair
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.Query
 
 
 class NewChat : AppCompatActivity() {
@@ -26,16 +30,26 @@ class NewChat : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_chat)
         fetchUsers()
+        go_back()
     }
 
     fun fetchUsers(){
         val adapter = GroupAdapter<ViewHolder>()
-        val db = FirebaseFirestore.getInstance().collection("users")
+        adapter.clear()
+        val db = FirebaseFirestore.getInstance().collection("users").orderBy("username", Query.Direction.ASCENDING)
         db.addSnapshotListener { querySnapshot, firebaseFirestoreException ->
             if(querySnapshot != null && !querySnapshot?.isEmpty){
-                querySnapshot.forEach {
-                    val user = it.toObject(UserInfo::class.java)
-                    adapter.add(UserItem(user))
+                for(it in querySnapshot!!.documentChanges) {
+                    val user = it.document.toObject(UserInfo::class.java)
+                    val id = it.document.id
+                    val oldIndex = it.oldIndex
+                    val newIndex = it.newIndex
+                    //TODO fix the updating without duplicating
+                    if(id != FirebaseAuth.getInstance().uid){
+                        if(oldIndex != newIndex){
+                            adapter.add(UserItem(user))
+                        }
+                    }
                 }
                 adapter.setOnItemClickListener { item, view ->
                     val intent = Intent(view.context, OpenChat::class.java)
@@ -54,8 +68,16 @@ class NewChat : AppCompatActivity() {
                         startActivity(intent)
                     }
                 }
-                newchat_recyclerview.adapter = adapter
+//                                    newchat_recyclerview.adapter = adapter
             }
         }
+        newchat_recyclerview.adapter = adapter
     }
+
+    fun go_back(){
+        newchat_back.setOnClickListener {
+            finish()
+        }
+    }
+
 }

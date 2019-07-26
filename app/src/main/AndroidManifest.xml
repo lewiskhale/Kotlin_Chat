@@ -13,7 +13,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
-        <activity android:windowSoftInputMode="adjustResize" android:name=".ChatActivities.OpenChat">
+        <activity android:windowSoftInputMode="adjustResize"
+                  android:name=".ChatActivities.OpenChat">
         </activity>
         <activity android:name=".ChatActivities.NewChat">
             <meta-data

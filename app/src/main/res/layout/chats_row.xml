@@ -24,7 +24,6 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
             android:transitionName="user_name"
-            android:background="@color/color_primary"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/avatar"

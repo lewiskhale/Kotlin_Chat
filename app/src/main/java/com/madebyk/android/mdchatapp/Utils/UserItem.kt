@@ -21,10 +21,9 @@ class UserItem(val user: UserInfo): Item<ViewHolder>(){
 
         image = viewHolder.itemView.findViewById(R.id.newchat_imageView)
         name = viewHolder.itemView.findViewById(R.id.newchat_username)
-
         Glide
             .with(viewHolder.itemView.context)
-            .load(R.drawable.ic_person_outline_black_24dp)
+            .load(R.drawable.avatar)
             .into(image)
 
     }

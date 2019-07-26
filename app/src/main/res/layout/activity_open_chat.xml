@@ -24,12 +24,10 @@
                 android:scaleType="centerInside"
                 android:clickable="true"
                 android:layout_width="50dp"
-                android:layout_height="50dp" tools:layout_editor_absoluteY="3dp" tools:layout_editor_absoluteX="16dp"
-                android:adjustViewBounds="false"/>
+                android:layout_height="50dp"/>
 
         <de.hdodenhof.circleimageview.CircleImageView
                 android:transitionName="user_image"
-                android:background="@color/color_primary"
                 android:layout_marginLeft="30dp"
                 android:id="@+id/open_chat_userImage"
                 android:layout_width="45dp"
@@ -108,8 +106,8 @@
 
     </RelativeLayout>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-            android:elevation="15dp"
+    <ImageButton
+            android:elevation="25dp"
             android:clickable="true"
             android:src="@drawable/voice"
             android:background="@drawable/login_button_bg"

@@ -19,8 +19,9 @@
         <ImageView
                 android:id="@+id/newchat_back"
                 android:src="@drawable/go_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:scaleType="centerInside"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
 
         <com.google.android.material.textview.MaterialTextView
                 android:text="Users"
